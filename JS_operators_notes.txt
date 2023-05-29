@@ -1,0 +1,38 @@
+Types of JS operators
+ 
+. Arithmetic Operatior
+. Assignement Operatior
+. Comparsion Operatior
+. String Operatior
+. Logical Operatior
+. Type Operatior
+. Ternary Operatior
+. Bitwise Operatior
+
+JavaScript Arithmetic
+Arithmetic Operations
+A typical arithmetic operation takes two numbers (or expressions) and produces a new number.
+
+operator    description
+**        - exponential(ES2016)
+BODMAS - Bracket, Order, Division, Multiplication, Addition, and Subtraction.
+
+JS LOgical Operators:
+&& - logical and
+|| - logical or
+!  - logical not
+
+JS Type Operators
+typeof - returns the type of a variable
+instanceof returns true if an object is aninstance of an object
+
+
+BitWise Operators:
+& - AND
+| - OR
+~ - NOT
+^ - XOR
+<< - left shift
+>> - right shift
+>>> - unsigned right shift
+
