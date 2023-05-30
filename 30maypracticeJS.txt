@@ -1,0 +1,109 @@
+*String:
+JS strings are for storing and manipulating text.
+* we can use quotes inside a string.
+
+let answer1 = "It's alright";
+let answer2 = "he is called 'Johnny'";
+let answer3 = 'he is called "Johnny"';
+
+document.getElementById("demo").innerHTML = answer1 + "<br>"+
+answer2 + "<br>"+ answer3 ;
+
+* To find the length of the string, use the built-in length property.
+let text ="ABHNKHHJKUHYILGVHNJJVGGH";
+document.getElementById("demo").innerHTML = text.length;
+o/p: 26
+
+*The sequence \" inserts a double quote in a string
+
+let text = " We are the so-called \"Vikings\" from the north";
+document.getElementById("demo").innerHTML = text; 
+o/p: We are the so-called "Vikings" from the north
+
+* you can break a code line within a text string with a backslash.
+document.getElementById("demo").innerHTML = "Hello \
+Dolly!"
+o/p:Hello Dolly!
+
+* when using == operator, x and y are equal
+let x = "Jolly";
+let y = new String("Jolly");
+document.getElementById("demo").innerHTML = (x==y);
+o/p: true
+
+* when using === operator, x and y are not equal
+let x = "Jolly";
+let y = new String("Jolly");
+document.getElementById("demo").innerHTML = (x===y);
+o/p:false
+
+*js objects cannot be compared
+let x = new String("Jolly");//x is an object
+let y = new String("Jolly"); // y is an object
+
+document.getElementById("demo").innerHTML = (x===y);
+o/p:false
+* comparing js two objects always return false.
+
+** String Methods**
+Length property return the length of the string
+let text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+document.getElementById("demo").innerHTML = text.length;
+o/p:26
+
+** Exacting String Parts
+There are 3 methods
+slice(start, end)
+substring(start, end).
+Substr(start, length)
+JS String slice()
+
+replace
+<p id="demo">please Visit Microsoft</p>
+function myFunction() {
+  let text = document.getElementById("demo").innerHTML;
+  document.getElementById("demo").innerHTML =
+  text.replace("Microsoft", "Jolly");
+  
+  }
+o/p: please Visit Jolly
+**replaceAll():
+
+let text = "I love cats. Cats are very easy to love. Cats are very popular."
+text = text.replaceAll("Cats", "Dogs");
+text = text.replaceAll("cats", "dogs");
+document.getElementById("demo").innerHTML = text;
+
+o/p: I love dogs. Dogs are very easy to love. Dogs are very popular.
+*/g
+let text = "I love cats. Cats are very easy to love. Cats are very popular."
+text = text.replaceAll(/cats/g,"dogs");
+
+document.getElementById("demo").innerHTML = text;
+
+replaceAll() does not work in Internet Explorer.
+
+*convert string to lowercase
+
+<button onclick="myFunction()">Try it</button>
+<p id="demo">Hello World!</p>
+function myFunction(){
+let text = document.getElementById("demo").innerHTML ;
+document.getElementById("demo").innerHTML = text.toLowerCase();
+}
+*convert string to Uppercase
+<button onclick="myFunction()">Try it</button>
+<p id="demo">Hello World!</p>
+function myFunction(){
+let text = document.getElementById("demo").innerHTML ;
+document.getElementById("demo").innerHTML = text.toUpperCase();
+}
+*concat : Join two or More Strings:
+let text1 = "Jooly";
+let text2 = "Navy";
+let text3 = text1.concat(" ", text2);
+document.getElementById("demo").innerHTML= text3;
+o/p:Jooly Navy
+
+***Strings are immutable: string can't be changed, only replaced.***
+
