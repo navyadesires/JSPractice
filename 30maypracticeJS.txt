@@ -107,3 +107,178 @@ o/p:Jooly Navy
 
 ***Strings are immutable: string can't be changed, only replaced.***
 
+trim():
+let text1 = "     Hello World!     ";
+let text2 = text1.trim();
+
+document.getElementById("demo").innerHTML =
+"Length text1 = " + text1.length + "<br>Length text2 = " + text2.length;
+o/p: Length text1 = 22
+Length text2 = 12
+
+*trimEnd():
+et text1 = "     Hello World!     ";
+let text2 = text1.trimEnd();
+
+document.getElementById("demo").innerHTML =
+"Length text1 = " + text1.length + "<br>Length text2 = " + text2.length;
+o/p:Length text1 = 22
+Length text2 = 17
+*trimStart()
+et text1 = "     Hello World!     ";
+let text2 = text1.trimStart();
+
+document.getElementById("demo").innerHTML =
+"Length text1 = " + text1.length + "<br>Length text2 = " + text2.length;
+o/p:Length text1 = 22
+Length text2 = 17
+
+31 may 2023
+
+**padStart()**
+* this method pads a string from the start
+* it is a string method
+* To pad a number, convert the number to a string first.
+
+let text = "5";
+text = text.padStart(4,"0");
+
+document.getElementById("demo").innerHTML = text;
+o/p: 0005
+
+padEnd():
+*The padEnd() method pads a string at the end.
+let text = "5";
+document.getElementById("demo").innerHTML = text.padEnd(4,"x");
+o/p:xxx5
+
+ChatAt():
+var text = "Jolly World";
+document.getElementById("demo").innerHTML = text.charAt(0);
+o/p:J
+chatCodeAt():
+let text = "Jolly World!";
+document.getElementById("demo").innerHTML = text[0];
+o/p:76
+property Access
+let text = "Jolly World!";
+document.getElementById("demo").innerHTML = text[0];
+o/p:J
+
+split():
+Display the first element , after a string split:
+let text ="a,b,c,d,w";
+let array = text.split(",");
+document.getElementById("demo").innerHTML = array[4];
+o/p: w
+
+indexOf():
+let text = "Please locate where 'locate' occurs!";
+let index = text.indexOf("locate");
+document.getElementById("demo").innerHTML = index;
+0/p:7
+**lastIndexOf()
+this method returns the index of the last occurrence of a specified text in a astring.
+
+let text = "Please locate where 'locate' occurs!";
+let index = text.lastIndexOf("locate");
+document.getElementById("demo").innerHTML = index;
+
+o/p:21
+* Both indexOf() and lastIndexOf() return -1 if the text is not found
+let text = "Please locate where 'locate' occurs!";
+let index = text.indexOf("John");
+document.getElementById("demo").innerHTML = index;
+o/p:-1
+
+The indexOf() method accepts a second parameter as the starting position for the serach.
+let text = "Please locate where 'locate' occurs!";
+let index = text.indexOf("locate",13);
+document.getElementById("demo").innerHTML = index;
+
+0/p: 21
+
+search
+let text = "Please locate where 'locate' occurs!";
+let index = text.search(/locate/);
+document.getElementById("demo").innerHTML = index; 
+o/p:7
+** search():
+The search() method returns the position of the first occurrence of a string in a string.
+let text = "Please locate where 'locate' occurs!";
+let index = text.search("locate");
+document.getElementById("demo").innerHTML = index; 
+o/p: 7
+
+* difference
+The two methods are NOT equal. These are the differences:
+
+The search() method cannot take a second start position argument.
+The indexOf() method cannot take powerful search values (regular expressions).
+
+match():
+let text = "The rain in SPAIN stays mainly in the plain";
+let myArr = text.match(/ain/g);
+document.getElementById("demo").innerHTML = myArr.length + " "+myArr; 
+o/p:3 ain,ain,ain
+
+let text = "The rain in SPAIN stays mainly in the plain";
+let myArr = text.match("ain");
+document.getElementById("demo").innerHTML = myArr.length + " "+myArr;
+o/p: 1 ain
+
+let text = "The rain in SPAIN stays mainly in the plain";
+let myArr = text.match(/ain/gi);
+document.getElementById("demo").innerHTML = myArr.length + " "+myArr; 
+o/p:4 ain,AIN,ain,ain
+
+MatchAll():
+let text = "I love cats. Cats are very easy to love. Cats are very popular.";
+let iterator = text.matchAll("Cats")
+document.getElementById("demo").innerHTML = Array.from(iterator); 
+o/p:Cats,Cats
+
+let text = "I love cats. Cats are very easy to love. Cats are very popular.";
+let iterator = text.matchAll(/Cats/gi)
+document.getElementById("demo").innerHTML = Array.from(iterator); 
+o/p:cats,Cats,cats
+
+
+* includes(): it is case sensitive
+* includes returns true if a string contains a specified value.
+
+this method returns true if a string contains a specied value. Otherwise it returns false.
+
+let text = "Hello world, welcome to the universe.";
+document.getElementById("demo").innerHTML = text.includes("world");
+o/p: true
+
+let text = "world, wel world to the universe.";
+document.getElementById("demo").innerHTML = text.includes("world", 11);
+o/p: true
+
+startsWith():
+* It returns true if a string begins with a specified value.
+
+let text = "Hello world, Hello welcome to the universe.";
+document.getElementById("demo").innnerHTML = text.statsWith("Hello");
+o/p:true;
+
+let text = "Hello world, Hello welcome to the universe.";
+document.getElementById("demo").innerHTML = text.startsWith("world");
+o/p: false
+exact position only accepts. 
+document.getElementById("demo").innerHTML = text.startsWith("welcome", 13);
+o/p: true
+
+**endsWith():
+this method returns true if a string end with a specifed value. 
+let text = "John Doe" ;
+document.getElementById("demo").innerHTML = text.endsWith("Doe");
+o/p: true
+
+let text = "Hello world, welcome to the universe.";
+document.getElementById("demo").innerHTML = text.endsWith("world", 11);
+o/p: true
+
+
