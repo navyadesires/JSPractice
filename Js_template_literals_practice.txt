@@ -1,0 +1,355 @@
+Javascript template literals***
+-Synomous:
+-Template literals
+-String Templates
+-Back-Tics syntax
+-Template Strings
+
+<html>
+<body>
+<h2>JavaScript Template Literals</h2>
+<p>Template literals allows multiline strings:</p>
+<p id="demo"></p>
+<script>
+let text =
+`The quick
+brown fox
+jumps over
+the lazy dog`;
+document.getElementById("demo").innerHTML = text;
+</script>
+</body>
+</html>
+o/p:The quick brown fox jumps over the lazy dog
+
+** template literals use back-ticks (` `) to defined a string.
+let text = `Hello world!`;
+console.log(text);
+Hello World
+
+* with template literals , u can use both single and double quotes inside a string.
+ 
+* Interpolation
+Template literals provide an easy way to interpolate variables and expression into strings.this method is called string interpolation.
+syntax: ${...}
+
+* template literals allows variables in strings
+ let firstName = "John";
+let lastName = "Doe";
+
+let text = `Welcome ${firstName}, ${lastName}!`;
+console.log(text);
+
+
+12/06/2023
+JS Numbers:
+<p>If you add two strings, the result will be a concatenated strings:</p>
+
+<p id="demo"></p>
+<script>
+let x = "123";
+let y = "1";
+let z = x + y;
+document.getElementById("demo").innerHTML = z;
+</script>
+o/p:- 1231
+*If you add a string and a number, the result will be a concatenated string.
+*If you add a number and a string, the result will be a concatenated string.
+
+<p>JS will try to convert strings to numbers when dividing:</p>
+
+<p id="demo"></p>
+<script>
+let x = "120";
+let y = "10";
+let z = x / y;
+document.getElementById("demo").innerHTML = z;
+</script>
+o/p: 12
+
+*** Nan - Not a Number
+* NaN is a JavaScript reserved word indicating that a number is not a legal number.
+
+<p> the type of Nan is number. </p>
+
+<p id="demo"></p>
+<script>
+let x = NaN;
+document.getElementById("demo").innerHTML = typeof x;
+</script>
+o/p:number
+
+
+<p> the type of Infinity is number. </p>
+
+<p id="demo"></p>
+<script>
+let x = Infinity;
+document.getElementById("demo").innerHTML = typeof x;
+</script>
+o/p: number
+
+Hexadecimal is base 16
+Decimal is base 10
+octal is base 8
+Binary is Base 2
+
+Jun 13 2023
+
+*** BigInt ***
+
+JS BigInt variables are used to store big integer values that are too big to be represented by a normal JS "Number".
+
+* In JS, all numbes are stored in a 64-bit floating-point format.
+
+ * Arithmetic between a bigInt and Number is not allowed.
+ * Unsigned right shift(>>>) can not be done on a BigInt.
+
+Number.isSafeInterger
+the Number.isSafeInterger() static method determines wheter the provided value is a number that is same integer.
+
+jun 14
+
+toString() - returns a number as a string
+toExponential() - returns a number written in exponential notation.
+toFixed() - returns a number written with a number of decomals.
+toprecision() - returns number written with a specific length
+ValueOf() - Returns a number as a number
+
+toString():
+<p id="demo"></p>
+<script>
+let x = 123;
+document.getElementById("demo").innerHTML = x.toString() + "<br>" +
+(100 + 23).toString() + "<br>"+
+(123).toString();
+</script>
+o/p: 123
+123
+123
+
+
+jun 16
+
+Array methods:
+
+**JS Array length **
+the length property returns the length(size) of an array.
+ex:
+<p> the length property return the length of an array. </p>
+<p id="demo"></p>
+<script>
+const fruits = ["Banana", "Orange","Apple","mango"];
+let size = fruits.length;
+document.getElementById("demo").innerHTML = size;
+</script>
+o/p: 4
+** JS Array toString() **
+* toString()  returns an array to a string of (comma separated values)
+ex: 
+<p> the tostring() method returns an array as a commas separated string.</p>
+<p id="demo"></p>
+<script>
+const fruits = ["Banana", "Orange","Apple","Mango"];
+document.getElementById("demo").innerHTML = fruits.toString();
+</script>
+o/p:Banana,Orange,Apple,Mango
+*Join():
+join() method also joins all array elements into a string.
+It behaves just like toString(), but in addition you can specify the separator.
+<p id="demo"></p>
+<script>
+const fruits = ["Banana", "Orange","Apple","Mango"];
+document.getElementById("demo").innerHTML = fruits.join("*");
+</script>
+o/p:Banana * Orange * Apple * Mango
+
+* Popping and pushing
+Popping items out of an array, or pushing items inti an array.
+
+JS Array pop():
+the pop method removes the last element from an array.
+
+<p id="demo1"></p>
+<p id="demo2"></p>
+<script>
+const fruits = ["Banana", "Orange","Apple","Mango"];
+document.getElementById("demo1").innerHTML = fruits.pop();
+document.getElementById("demo2").innerHTML = fruits;
+</script>
+
+o/p:Banana,Orange,Apple,Mango
+
+Banana,Orange,Apple
+
+the pop() method returns the value that was "poped out"
+<p id="demo1"></p>
+<p id="demo2"></p>
+<script>
+const fruits = ["Banana", "Orange","Apple","Mango"];
+document.getElementById("demo1").innerHTML = fruits.pop();
+document.getElementById("demo2").innerHTML = fruits;
+</script>
+o/p:Mango
+
+Banana,Orange,Apple
+
+JS Array push()
+the push() method adds a new element to an array(at the end).
+<p id="demo1"></p>
+<p id="demo2"></p>
+<script>
+const fruits = ["Banana", "Orange","Apple","Mango"];
+document.getElementById("demo1").innerHTML = fruits;
+fruits.push("KIWI");
+document.getElementById("demo2").innerHTML = fruits;
+</script>
+o/p:Banana,Orange,Apple,Mango
+
+Banana,Orange,Apple,Mango,KIWI
+
+<p id="demo1"></p>
+<p id="demo2"></p>
+<script>
+const fruits = ["Banana", "Orange","Apple","Mango"];
+document.getElementById("demo1").innerHTML = fruits.push("Kiwi");
+document.getElementById("demo2").innerHTML = fruits;
+</script>
+o/p: 5
+
+Banana,Orange,Apple,Mango,Kiwi
+
+Shift:
+this method() removes the first element of an array.
+<p id="demo1"></p>
+<p id="demo2"></p>
+<script>
+const fruits = ["Banana", "Orange","Apple","Mango"];
+document.getElementById("demo1").innerHTML = fruits;
+fruits.shift();
+document.getElementById("demo2").innerHTML = fruits;
+</script>
+
+o/p:Banana,Orange,Apple,Mango
+
+Orange,Apple,Mango
+
+* The shift() method returns the value that was "shifted out":
+
+<p>The shift() method returns the element that was shifted out.</p>
+<p id="demo1"></p>
+<p id="demo2"></p>
+<script>
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo1").innerHTML = fruits.shift();
+document.getElementById("demo2").innerHTML = fruits;
+</script>
+o/p:Banana
+
+Orange,Apple,Mango
+
+*Array unshift()
+<p>The unshift() method adds new elements to the beginning of an array:</p>
+
+<p id="demo1"></p>
+<p id="demo2"></p>
+
+<script>
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo1").innerHTML = fruits;
+fruits.unshift("Lemon");
+document.getElementById("demo2").innerHTML = fruits;
+</script>
+o/p:5
+
+Lemon,Banana,Orange,Apple,Mango
+
+*** Array Length:
+The length property provides an easy way to append new elements to an array without using push() method:
+
+<p id="demo1"></p>
+<p id="demo2"></p>
+<script>
+const fruits = ["Banana", "Orange","Apple","Mango"];
+document.getElementById("demo1").innerHTML = fruits;
+fruits[fruits.length]="Sapota";
+document.getElementById("demo2").innerHTML = fruits;
+</script>
+o/p:Banana,Orange,Apple,Mango
+
+Banana,Orange,Apple,Mango,Kiwi
+
+*** Array delete():
+
+Array elements can be deleted using the JavaScript operator delete.
+
+Using delete leaves undefined holes in the array.
+
+Use pop() or shift() instead.
+<p id="demo1"></p>
+<p id="demo2"></p>
+<script>
+const fruits = ["Banana", "Orange","Apple","Mango"];
+document.getElementById("demo1").innerHTML = "the first fruit is: " 
++ fruits[0];
+delete fruits[0];
+document.getElementById("demo2").innerHTML = "the second fruit is: " 
++ fruits[0];
+</script>
+
+*** concat():
+concat() method merges (concatenates) arrays:
+
+<p id="demo"></p>
+<script>
+const myGirls = ["anshu", "anu"];
+const myBoys = ["Email","linus","Tobias"];
+const myChildern = myGirls.concat(myBoys);
+document.getElementById("demo").innerHTML = myChildern;
+</script>
+o/p:anshu,anu,Email,linus,Tobias
+
+The concat() method does not change the existing arrays. It always returns a new array.
+The concat() method merges (concatenates) arrays:
+<script>
+const myGirls = ["anshu", "anu"];
+const myBoys = ["Email","linus","Tobias"];
+const myheros= ["Robin","Sohith"];
+const myChildern = myGirls.concat(myBoys,myheros);
+document.getElementById("demo").innerHTML = myChildern;
+</script>
+
+o/p: anshu,anu,Email,linus,Tobias,Robin,Sohith
+
+Splicing and Slicing Arrays
+The splice() method adds new items to an array.
+The slice() method slices out apiece of an array.
+
+
+<p>The splice() method adds new elements to an array, and returns an array with the deleted elements (if any):</p>
+
+<p id="demo1"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+
+<script>
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo1").innerHTML = "Original Array:<br> " + fruits;
+let removed = fruits.splice(2, 2, "Lemon", "Kiwi"); 
+document.getElementById("demo2").innerHTML = "New Array:<br>" + fruits;
+document.getElementById("demo3").innerHTML = "Removed Items:<br> " + removed; 
+</script>
+o/p:The splice() method adds new elements to an array, and returns an array with the deleted elements (if any):
+
+Original Array:
+Banana,Orange,Apple,Mango
+
+New Array:
+Banana,Orange,Lemon,Kiwi
+
+Removed Items:
+Apple,Mango
+
+
+*** js slice() 
+the slice() method slices out a piece of an array into a new array.
