@@ -350,6 +350,187 @@ Banana,Orange,Lemon,Kiwi
 Removed Items:
 Apple,Mango
 
-
+jun 19
 *** js slice() 
 the slice() method slices out a piece of an array into a new array.
+june 20:
+JS Array Sort
+The sort() method sorts an array alphabetically
+
+<p> tThe sort() method sorts an array alphabetically.</p>
+<p id="demo1"></p>
+<p id="demo2"></p>
+<script>
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo1").innerHTML = "Original Array:<br> " + fruits;
+fruits.sort();
+document.getElementById("demo2").innerHTML = "Sort an array:<br>" +fruits;
+</script>
+
+o/p:the tostring() method returns an array as a commas separated string.
+
+Original Array:
+Banana,Orange,Apple,Mango
+
+Sort an array:
+Apple,Banana,Mango,Orange
+
+Reversing an array
+the reverse() method reverse the elements in an array.
+
+<p id="demo1"></p>
+<p id="demo2"></p>
+<script>
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo1").innerHTML = "Original Array:<br> " + fruits;
+fruits.sort()
+fruits.reverse();
+document.getElementById("demo2").innerHTML = "Sort an array:<br>" +fruits;
+</script>
+
+ex:Original Array:
+Banana,Orange,Apple,Mango
+
+Sort an array:
+Orange,Mango,Banana,Apple
+
+** Numeric Sort **
+By default, the sort() function sorts values as string.
+the soft() method will produce incorrect result when sorting numbers.
+
+<p id="demo1"></p>
+<p id="demo2"></p>
+<script>
+const points = [40, 100, 1, 5, 25, 10];
+document.getElementById("demo1").innerHTML = "Original Array:<br> " + points;
+points.sort(function(a,b){return a-b});
+document.getElementById("demo2").innerHTML = "Sort an array:<br>" +points;
+</script>
+o/p:40,100,1,5,25,10
+    100,40,25,10,5,1
+
+*Decending Order:
+<script>
+const points = [40, 100, 1, 5, 25, 10];
+document.getElementById("demo1").innerHTML = points;
+
+points.sort(function(a, b){return b - a});
+document.getElementById("demo2").innerHTML = points;
+</script>
+o/p:40,100,1,5,25,10
+100,40,25,10,5,1
+
+*experiment with numerically and alphabetically sorting:
+
+<button onclick="myFunction1()">Sort Alphabetically</button>
+<button onclick="myFunction2()">Sort Numerically</button>
+<p id="demo"></p>
+<script>
+const points = [40, 100, 1, 5, 25, 10];
+document.getElementById("demo").innerHTML = points;
+function myFunction1(){
+points.sort();
+document.getElementById("demo").innerHTML = points
+}
+function myFunction2(){
+points.sort(function(a,b){return a-b});
+document.getElementById("demo").innerHTML = points;
+}
+</script>
+o/p:Sort Alphabetically 1,10,100,25,40,5
+Sort Numerically 1,5,10,25,40,100
+
+*Sorting an Array in Random Order
+<p>Click the button (again and again) to sort the array in random order.</p>
+<button onclick="myFunction()">Try it</button>
+<p id="demo"></p>
+<script>
+const points = [40, 100, 1, 5, 25, 10];
+document.getElementById("demo").innerHTML = points;
+function myFunction(){
+points.sort(function(){return 0.5 - Math.random()})
+document.getElementById("demo").innerHTML = points;
+}
+</script>
+o/p:
+<p>Click the button (again and again) to sort the array in random order.</p>
+Try it
+10,40,25,1,100,5
+5,100,1,25,40,10
+1,25,100,10,5,40
+* randome values
+
+***Find the Highest(or Lowest) Array value
+There are no built-in functions for finding the max or min value in an array.
+
+However, after you have sorted an array, you can use the index to obtain the highest and lowest values.
+
+Sorting ascending:
+
+<p>The lowest number is <span id="demo"></span>.</p>
+
+<script>
+const points = [40, 100, 1, 5, 25, 10];
+points.sort(function(a, b){return a-b});
+document.getElementById("demo").innerHTML = points[0];
+</script>
+o/p:The lowest number is 1.
+* decendening order:
+<script>
+const points = [40, 100, 1, 5, 25, 10];
+points.sort(function(a, b){return b-a});
+document.getElementById("demo").innerHTML = points[0];
+</script>
+o/p: The highest number is 100.
+
+*** Using Math.max() on an array:
+u can use Math.max.apply to find the highest number in an array.
+<p> The highest number is <span id="demo"></span></p>
+<script>
+const points = [40, 100, 1, 5, 25, 10];
+document.getElementById("demo").innerHTML = myArrayMax(points);
+function myArrayMax(arr){
+return Math.max.apply(null, arr);
+}
+</script>
+o/p:The highest number is 100.
+
+*** Using Math.min() on an array:
+u can use Math.max.apply to find the highest number in an array.
+<p> The highest number is <span id="demo"></span></p>
+<script>
+const points = [40, 100, 1, 5, 25, 10];
+document.getElementById("demo").innerHTML = myArrayMax(points);
+function myArrayMax(arr){
+return Math.min.apply(null, arr);
+}
+</script>
+o/p:The highest number is 1.
+
+Math.min.apply(null, [1, 2, 3]) is equivalent to Math.min(1, 2, 3).
+
+
+**Sorting Object Arrays
+<p id="demo"></p>
+<script>
+const cars = [
+{type:"Volvo", year:2016},
+{type:"Saab", year:2001},
+{type:"BMW", year:2010}
+];
+displayCars();
+
+cars.sort(function(a,b){return a.year - b.year});
+displayCars();
+
+function displayCars(){
+document.getElementById("demo").innerHTML = 
+cars[0].type + " " + cars[0].year + "<br>" +
+cars[1].type + " " + cars[1].year + "<br>" +
+cars[2].type + " " + cars[2].year;
+}
+</script>
+o/p:Saab 2001
+BMW 2010
+Volvo 2016
+
