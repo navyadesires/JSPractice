@@ -1,0 +1,195 @@
+<section class="wn-login">
+  <div class="wn-login-page">
+    <div class="row g-0">
+      <div class="col-md-6 col-12 wn-loginimage-card">
+        <div class="wn-login-image">
+          <img
+            src="../../../../assets/images/login-image.png"
+            class="img-fluid"
+          />
+        </div>
+      </div>
+      <div class="col-md-6 col-12 wn-login-data">
+        <div class="row g-0 justify-content-center">
+          <div class="col-md-7">
+            <div class="wn-forgot-password" *ngIf="showPage">
+              <form [formGroup]="forgotpasswordForm" autocomplete="off">
+                <div class="form-heading text-center">
+                  <h4 class="wn-login-heading">Forgot Password</h4>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label"
+                    >Email<span class="text-danger">*</span></label
+                  >
+                  <input
+                    type="text"
+                    placeholder="Enter your email address"
+                    class="form-control"
+                    formControlName="email"
+                    [ngClass]="{
+                      'is-invalid':
+                        isSubmitted && forgotpasswordForm.controls.email.errors
+                    }"
+                  />
+                  <div
+                    *ngIf="
+                    forgotpasswordForm.controls['email'].invalid && isSubmitted"
+                    class="mm-validations"
+                  >
+                  <span
+                    class="instructions"
+                    *ngIf="
+                      forgotpasswordForm.controls.email.hasError('required')
+                    "
+                    >Please enter email</span
+                  >
+                  <span
+                    class="instructions"
+                    *ngIf="
+                      forgotpasswordForm.controls.email.hasError('pattern')
+                    "
+                    >Please enter valid email</span
+                  >
+                </div>
+                </div>
+                
+                <div class="form-button text-center">
+                  <button
+                    class="wn-login-btn"
+                    (click)="createPassword()">
+                    Submit
+                  </button>
+                </div>
+              </form>
+            </div>
+            <div class="wn-create-password" *ngIf="!showPage">
+              <form [formGroup]="passwordForm" autocomplete="off">
+                <div class="form-heading text-center">
+                  <h4 class="wn-login-heading">Create New Password</h4>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label"
+                    >Create New Password<span class="text-danger"
+                      >*</span
+                    ></label
+                  >
+                  <input
+                    type="text"
+                    placeholder="Enter the create new password"
+                    class="form-control"
+                    formControlName="newPassword"
+                    [ngClass]="{
+                      'is-invalid':
+                      iscreateSubmitted && passwordForm.controls.newPassword.errors
+                    }"
+                  />
+                  <div
+                  *ngIf="
+                  passwordForm.controls['newPassword'].invalid && iscreateSubmitted"
+                  class="mm-validations"
+                >
+                <span
+                  class="instructions"
+                  *ngIf="
+                  passwordForm.controls.newPassword.hasError('required')
+                  "
+                  >Please enter newPassword</span
+                >
+                <span
+                  class="instructions"
+                  *ngIf="
+                  passwordForm.controls.newPassword.hasError('pattern')
+                  "
+                  >Please enter valid newPassword</span
+                >
+              </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label"
+                    >Re-enter New Password<span class="text-danger"
+                      >*</span
+                    ></label
+                  >
+                  <input
+                    type="text"
+                    placeholder="Re-enter the new password"
+                    class="form-control"
+                    formControlName="confirmPassword"
+                    [ngClass]="{
+                      'is-invalid':
+                      iscreateSubmitted && passwordForm.controls.confirmPassword.errors
+                    }"
+                  />
+                  <div
+                    *ngIf="
+                    passwordForm.controls['confirmPassword'].invalid && iscreateSubmitted"
+                    class="mm-validations"
+                  >
+                  <span
+                    class="instructions"
+                    *ngIf="
+                    passwordForm.controls.confirmPassword.hasError('required')
+                    "
+                    >Please enter confirmPassword</span
+                  >
+                  <span
+                    class="instructions"
+                    *ngIf="
+                    passwordForm.controls.confirmPassword.hasError('pattern')
+                    "
+                    >Please enter valid confirmPassword</span
+                  >
+                </div>
+                </div>
+                <div class="form-button text-center">
+                  <button class="wn-login-btn" (click)="passwordchange()">Submit</button>
+                </div>
+              </form>
+            </div>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  forgotpasswordForm!:FormGroup;
+  passwordForm!:FormGroup;
+  showPage:boolean=true;
+  isSubmitted: boolean = false;
+  iscreateSubmitted: boolean = false;
+  constructor() { }
+
+  ngOnInit(): void {
+    this.forgotpasswordForm = new FormGroup({
+      email : new FormControl('',[Validators.required,  Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'),])
+    })
+
+    this.passwordForm = new FormGroup({
+      newPassword : new FormControl('',[Validators.required,
+        Validators.pattern(
+          '^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@$!%*?&])[A-Za-z0-9@$!%*?&]{8,}$'
+        ),]),
+      confirmPassword: new FormControl('',[Validators.required,
+        Validators.pattern(
+          '^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@$!%*?&])[A-Za-z0-9@$!%*?&]{8,}$'
+        ),])
+    })
+  }
+  createPassword(){
+    this.isSubmitted = true;
+    if (this.forgotpasswordForm.invalid) {
+      return;
+    }
+     this.showPage=false;
+  }
+
+  passwordchange(){
+    this.iscreateSubmitted = true;
+    if (this.passwordForm.invalid) {
+      return;
+    }
+  }

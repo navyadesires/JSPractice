@@ -1,0 +1,98 @@
+june 21
+
+Dates:
+
+<p id="demo"></p>
+<script>
+const d = new Date("2024-03-20");
+document.getElementById("demo").innerHTML = d;
+</script>
+o/p:Wed Mar 20 2024 05:30:00 GMT+0530 (India Standard Time)
+
+Creating Date Objects
+Date objects are created with the new Date() constructor.
+
+JS new Date()
+new date() creates a date object with the current date and time.
+
+<p id="demo"></p>
+
+<script>
+const d = new Date();
+document.getElementById("demo").innerHTML = d;
+</script>
+
+o/p:Wed Jun 21 2023 11:06:54 GMT+0530 (India Standard Time)
+
+JavaScript counts months from 0 to 11:
+
+January = 0.
+
+December = 11.
+
+
+<p id="demo"></p>
+<script>
+const d = new Date(1998, 02,20, 09, 25,30, 0);
+document.getElementById("demo").innerHTML = d;
+</script>
+o/p:Fri Mar 20 1998 09:25:30 GMT+0530 (India Standard Time)
+
+* One parameter will be intrepreted as new date
+
+<p id="demo"></p>
+
+<script>
+const d = new Date(2020);
+document.getElementById("demo").innerHTML = d;
+</script>
+
+o/p:Thu Jan 01 1970 05:30:02 GMT+0530 (India Standard Time)
+
+*** Two digit years will be interpreted as 19xx
+<script>
+const d = new Date(99, 11, 24);
+document.getElementById("demo").innerHTML = d;
+</script>
+o/p:Fri Dec 24 1999 00:00:00 GMT+0530 (India Standard Time)
+
+<script>
+const d = new Date(0, 0, 0);
+document.getElementById("demo").innerHTML = d;
+</script>
+o/p:Sun Dec 31 1899 00:00:00 GMT+0521 (India Standard Time)
+
+** Convert date to a string
+<script>
+const d = new date();
+document.getElementById("demo").innerHTML = d.toString();
+</script>
+o/p:Wed Jun 21 2023 18:54:16 GMT+0530 (India Standard Time)
+
+* convert a date to a date string
+* the toDateString() method converts a date to a more readable format.
+ 
+<p id="demo"></p>
+<script>
+const d = new Date();
+document.getElementById("demo").innerHTML = d.toDateString();
+</script>
+o/p:Wed Jun 21 2023
+
+
+* the toUTCString() method Convert a date to a string using the UTC standard.
+
+<script>
+const d = new Date();
+document.getElementById("demo").innerHTML = d.toUTCString();
+</script>
+o/p:Wed, 21 Jun 2023 13:28:43 GMT
+
+*The toISOString() method converts a date to a string using the ISO standard:
+<p id="demo"></p>
+<script>
+const d = new Date();
+document.getElementById("demo").innerHTML = d.toISOString();
+</script>
+o/p:2023-06-21T13:30:26.886Z
+
