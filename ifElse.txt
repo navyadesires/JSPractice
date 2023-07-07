@@ -1,0 +1,27 @@
+june 28/23
+
+If
+*Display "Good day!" if the hour is less than 18:00
+<script>
+if(new Date().getHours() < 18) {
+document.getElementById("demo").innerHTML = "Good day";
+}
+</script>
+o/p: Good day
+
+IfElse
+
+<script>
+const hour = new Date().getHours();
+let greeting;
+if(hour<18){
+greeting = 'Good day';
+}
+else{
+greeting = " Good evening";
+}
+document.getElementById("demo").innerHTML = greeting;
+</script>
+o/p:Goodday
+
+

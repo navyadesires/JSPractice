@@ -1,0 +1,170 @@
+** JS Comparsions
+== equal to 
+let x = 5;
+document.getElementById("demo").innerHTML = (x === 8);
+o/p:false
+
+let x = 5;
+document.getElementById("demo").innerHTML = (x == 5);
+o/p: true
+
+let x = 5;
+document.getElementById("demo").innerHTML = (x == '5');
+o/p:true
+
+=== equal value and equal type ***
+
+let x = 5;
+document.getElementById("demo").innerHTML = (x === 5);
+o/p:true
+
+let x = 5;
+document.getElementById("demo").innerHTML = (x === '5');
+o/p: false
+
+!= not equal
+let x = 5;
+document.getElementById("demo").innerHTML = (x != 8);
+o/p: true
+
+!== not equal value or not equal type
+
+let x =5;
+document.getElementById("demo").innerHTML = (x !==5)
+o/p: false
+
+let x =5;
+document.getElementById("demo").innerHTML = (x !==8)
+o/p: true
+
+let x =5;
+document.getElementById("demo").innerHTML = (x !== '5')
+o/p: true
+
+> greater than
+let x =5;
+document.getElementById("demo").innerHTML = (x > 8);
+o/p: false
+
+< less than
+let x =5;
+document.getElementById("demo").innerHTML = (x < 8);
+o/p: true
+
+>= 
+let x = 5;
+document.getElementById("demo").innerHTML = (x >= 8);
+o/p:false
+
+<= 
+let x = 5;
+document.getElementById("demo").innerHTML = (x <= 8);
+o/p: true
+
+*** The && Operator (Logical AND)
+The && operator returns true if both expressions are true, otherwise it returns false
+
+<script>
+let x = 6;
+let y = 3;
+
+document.getElementById("demo").innerHTML = 
+(x < 10 && y > 1) + "<br>" + 
+(x < 10 && y < 1);
+</script>
+o/p:true
+false
+
+*** The || Operator (Logical OR)
+The || returns true if one or both expressions are true, otherwise it returns false.
+
+<script>
+let x = 6;
+let y = 3;
+
+document.getElementById("demo").innerHTML = 
+(x == 5 || y == 5) + "<br>" + 
+(x == 6 || y == 0) + "<br>" + 
+(x == 0 || y == 3) + "<br>" + 
+(x == 6 || y == 3);
+</script>
+o/p:false
+true
+true
+true
+
+***Not (!)
+The NOT operator (!) returns true for false statements and false for true statements.
+<script>
+let x = 6;
+let y = 3;
+
+document.getElementById("demo").innerHTML = 
+!(x === y) + "<br>" + 
+!(x > y);
+</script>
+o/p:true
+false
+
+<input id="age" value="18" />
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  let age = document.getElementById("age").value;
+  let voteable = (age < 18) ? "Too young":"Old enough";
+  document.getElementById("demo").innerHTML = voteable + " to vote.";
+}
+</script>
+o/p: 
+
+
+document.getElementById("demo").innerHTML = 2 < 12;
+o/p: true
+
+document.getElementById("demo").innerHTML = 2 < "12";
+o/p:true
+
+document.getElementById("demo").innerHTML = 2 < "John";
+o/p: false
+
+document.getElementById("demo").innerHTML = 2 > "Navy";
+o/p:false
+
+document.getElementById("demo").innerHTML = 2 == 'navy';
+o/p: false
+
+document.getElementById("demo").innerHTML = "2" < "12";
+o/p: false
+
+document.getElementById("demo").innerHTML = "2" > "12";
+o/p: true
+
+document.getElementById("demo").innerHTML = "2" == "12";
+o/p: false
+
+*** Nullish Coalescing Operator (??)
+*** The ?? Operator ***
+The ?? operator returns the first argument if it is not nullish (null or undefined). Otherwise it returns the second.
+
+<p id ="demo"></p>
+<script>
+let name = undefined;
+let text = "missing";
+let result = name ?? text;
+document.getElementById("demo").innerHTML = "The name is " + result;
+</script>
+o/p: The name is missing
+
+**The Optional Chaining Operator (?.)
+The ?. operator returns undefined if an object is undefined or null (instead of throwing an error).
+
+<script>
+const car = {type:"Fiat", model:"500", color:"white"};
+let name = car?.type;
+document.getElementById("demo").innerHTML = name;
+</script>
+o/p: undefined

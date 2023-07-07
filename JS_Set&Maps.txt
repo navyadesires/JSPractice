@@ -1,0 +1,125 @@
+JS Set:
+A JS set is a collection of unique values.
+Each value can only occur once in a set.
+
+Method	Description
+new Set()	Creates a new Set
+add()	Adds a new element to the Set
+delete()	Removes an element from a Set
+has()	Returns true if a value exists in the Set
+forEach()	Invokes a callback for each element in the Set
+values()	Returns an iterator with all the values in a Set
+Property	Description
+size	Returns the number of elements in a Set
+
+Maps
+
+How to Create a Map
+You can create a JavaScript Map by:
+
+Passing an Array to new Map()
+Create a Map and use Map.set()
+
+** The new Map() Method 
+we can create a map by passing an array to the new map() constructor.
+
+//create a map
+const fruits = new Map([
+["apples", 500],
+["Mangos", 60],
+["Bananas", 40]
+]);
+  console.log(fruits.get("apples"));
+
+The set() method
+we can add elements to a Map with the set() method.
+
+using Map.set()
+
+const fruits = new Map([
+  ["apples", 200],
+  ["oranges", 100],
+  ["bananas", 100]
+  ]);
+fruits.set("bananas", 230)
+console.log(fruits.get("bananas"));
+
+The Size property
+the size property returns the number of elements in a Map
+
+const cars = new Map([
+  ["volvo", 200],
+  ["trago", 100],
+  ["Santro", 200]
+]);
+console.log(cars.size);
+o/p: 3
+
+*** The Delete() method ***
+The Delete method removes a Map element
+
+const fruits = new Map([
+  ["apples", 500],
+  ["bananas", 300],
+  ["oranges", 200]
+]);
+fruits.delete("oranges");
+console.log(fruits.size);
+o/p: 2
+
+The has() Method **
+ it returns true if a key exists in a map
+
+const fruits = new Map([
+  ["apples", 500],
+  ["bananas", 300],
+  ["oranges", 200]
+]);
+console.log(fruits.has("oranges"));
+o/p: true.
+
+const fruits = new Map([
+  ["apples", 500],
+  ["bananas", 300],
+  ["oranges", 200]
+]);
+
+// Delete an Element
+fruits.delete("apples");
+console.log(fruits.has("apples"));
+o/p: false
+the forEach() method
+the foreach() ethod calls a function for each key/value pair in a map.
+
+
+** forEach() method
+it calls a function for each key/value pair in a map.
+
+const fruits = new Map([
+  ["apples", 500],
+  ["bananas", 300],
+  ["oranges", 200]
+]);
+let text =" ";
+fruits.forEach (function(value, key)
+{
+  text += key + ' = ' + value + " "
+})
+console.log(text);
+
+o/p:" apples = 500 bananas = 300 oranges = 200 "
+
+*** the entries() method
+the entries method returns an iterator object with the [key, value] in a Map.
+
+const fruits = new Map([
+  ["apples", 500],
+  ["bananas", 300],
+  ["oranges", 200]
+]);
+let text ="";
+for(const x of fruits.entries()){
+  text += x + " ";
+}
+console.log(text);
+o/p:apples,500 bananas,300 oranges,200

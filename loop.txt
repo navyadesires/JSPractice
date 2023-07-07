@@ -1,0 +1,242 @@
+if
+
+const number = prompt("Enter a number: ");
+
+// check if number is greater than 0
+if (number > 0) {
+  console.log("The number is positive");
+}
+// if number is not greater than 0
+else {
+  console.log("The number is either a negative number or 0");
+}
+
+console.log("The if...else statement is easy");
+o/p: Enter a number: 2
+The number is positive
+The if...else statement is easy
+
+*** if...else if Statement
+
+// check if the number if positive, negative or zero
+const number = prompt("Enter a number: ");
+
+
+// check if number is greater than 0
+if (number > 0) {
+    console.log("The number is positive");
+}
+// check if number is 0
+else if (number == 0) {
+  console.log("The number is 0");
+}
+// if number is neither greater than 0, nor zero
+else {
+    console.log("The number is negative");
+}
+
+console.log("The if...else if...else statement is easy");
+
+o/p: Enter a number: 0
+The number is 0
+The if...else if...else statement is easy
+
+
+*** Loop For:
+
+<script>
+const cars = ["BMW", "Volvo", "Saab", "Ford", "Fiat", "Audi"];
+let text ="";
+for(let i=0; i<cars.length; i++){
+text += cars[i] + "<br>";
+}
+document.getElementById("demo").innerHTML = text;
+</script>
+o/p:BMW
+Volvo
+Saab
+Ford
+Fiat
+Audi
+
+*JavaScript supports different kinds of loops:
+
+for - loops through a block of code a number of times
+for/in - loops through the properties of an object
+for/of - loops through the values of an iterable object
+while - loops through a block of code while a specified condition is true
+do/while - also loops through a block of code while a specified condition is true
+
+let text = "";
+for(let i=0; i<5; i++){
+text +=" The number is " + i + "<br>";
+}
+document.getElementById("demo").innerHTML = text;
+
+o/p:
+The number is 0
+The number is 1
+The number is 2
+The number is 3
+The number is 4
+
+
+
+const cars = ["BMW", "Volvo", "Saab", "Ford"];
+let i = 2;
+let len = cars.length;
+let text = "";
+for(;i<len;i++){
+text += cars[i] +"<br>";
+}
+document.getElementById("demo").innerHTML = text;
+</script>
+
+
+Display sum of natural numbers
+let sum = 0;
+let n = 100;
+
+for( let i=1; i<=n;i++){
+sum += i;
+}
+document.getElementById("demo").innerHTML = sum;
+o/p:5050
+
+let sum = 0;
+const n = 100;
+for(let i =n; i>1; i--){
+sum += i;
+}
+document.getElementById("demo").innerHTML = sum;
+o/p:5049.
+
+JS Loop For In
+
+*** The For In Loop
+
+the Js for in statement loop through the properties of an object.
+
+const person = {fname:"John", lname:"Doe", age:25};
+
+let txt = "";
+for(let  x in person){
+txt += person[x]+ " ";
+}
+document.getElementById("demo").innerHTML = txt;
+o/p: 
+John Doe 25
+
+The for in loop iterates over a person object
+Each iteration returns a key (x)
+The key is used to access the value of the key
+The value of the key is person[x]
+
+Looping over a string
+
+<p>The for of statement loops through the values of an iterable object.</p>
+<p id ="demo"></p>
+<script>
+const language ="JavaScript";
+
+let text = "";
+for (let x of language){
+text += x + "<br>";
+}
+document.getElementById("demo").innerHTML = text;
+</script>
+o/p: J
+a
+v
+a
+S
+c
+r
+i
+p
+t
+
+* The for of statement loops through the values of any iterable object.
+
+<p id ="demo"></p>
+<script>
+const cars = ["BMW", "Volvo", "Mini"];;
+
+let text = "";
+for (let x of cars){
+text += x + "<br>";
+}
+document.getElementById("demo").innerHTML = text;
+</script>
+o/p:BMW
+Volvo
+Mini
+
+
+*** JS Break
+
+The break statement "jumps out" of a loop.
+The continue statement "jumps over" one iteration in the loop.
+
+The break statement
+You have already seen the break statement used in an earlier chapter of this tutorial. It was used to "jump out" of a switch() statement.
+
+The break statement can also be used to jump out of a loop:
+
+<script>
+let text ="";
+for(let i=0; i<10; i++){
+if(i ===3){
+break;
+}
+text += " The number is " + i + "<br>";
+}
+document.getElementById("demo").innerHTML = text;
+</script>
+o/p:
+The number is 0
+The number is 1
+The number is 2
+
+continue: The continue statement breaks one iteration (in the loop), if a specified condition occurs, and continues with the next iteration in the loop.
+
+let text ="";
+for(i=0; i<10; i++){
+  if(i ===3){
+    break;
+  }
+  text = "the number is" +i;
+  console.log(i);  
+}
+o/p: 0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+
+The break and the continue statements are the only JavaScript statements that can "jump out of" a code block.
+syntax:
+break labelname;
+
+continue labelname;
+
+const cars = ["BMW", "Volvo", "Saab", "Ford"];
+let text = "";
+list :{
+text += cars[0] + "<br>";
+text += cars[1] + "<br>";
+break list;
+text += cars[2] + "<br>";
+text += cars[3] + "<br>";
+}
+
+document.getElementById("demo").innerHTML = text;
+o/p:
+BMW
+Volvo
