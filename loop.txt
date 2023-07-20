@@ -172,6 +172,53 @@ o/p:BMW
 Volvo
 Mini
 
+** Switch
+var x =2;
+switch (x){
+    case 1:
+    console.log("choice is 1");
+    break;
+    case 2:
+    console.log("choice is 2");
+    break;
+    case 3:
+    console.log("choice is 3");
+    break;
+    default:
+    console.log("choice other than 1,2 and 3");
+    break;
+}
+o/p:choice is 2
+
+** Print current day
+
+const day = new Date().getDay();
+console.log(day);
+switch(day){
+  case 0:
+    console.log("today is sunday");
+    break;
+      case 1:
+    console.log("today is monday");
+    break;
+      case 2:
+    console.log("today is tuesday");
+    break;
+  case 3:
+    console.log("today is wednesday");
+    break;
+      case 4:
+    console.log("today is thursday");
+    break;
+  case 5:
+    console.log("today is friday");
+    break;
+  default:
+    console.log("known of the above")
+    break;
+}
+
+o/p: today is (current day)
 
 *** JS Break
 

@@ -123,3 +123,5 @@ for(const x of fruits.entries()){
 }
 console.log(text);
 o/p:apples,500 bananas,300 oranges,200
+
+
